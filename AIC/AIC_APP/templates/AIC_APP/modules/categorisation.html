@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="card text-light col-sm-8 col-12 mx-auto overflow-hidden" id="categorisationInputContainer">
+        <div class="d-flex flex-nowrap">
+            <form action="#" method="post" id="categorisationChoiceForm" class="categorisationChoiceForm col-12">
+                <div class="card-body">
+                    <div class="form-control">
+                        <h5>Do you want to use categories ?</h5>
+                        <div class="d-flex justify-content-around my-4">
+                            <label class="fs-4 d-flex justify-content-around align-items-center gap-2">
+                                <input type="radio" name="categorisation" value="Yes">
+                                Yes
+                            </label>
+                            <label class="fs-4 d-flex justify-content-around align-items-center gap-2">
+                                <input type="radio" name="categorisation" value="No" checked>
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary text-light w-100">Submit <i class="fa-solid fa-angles-right"></i></button>
+            </form>
+            <div class="col-12">
+                <div class="card-body">
+                    <div class="form-control">
+                        <h5>Enter Categories :</h5>
+                        <div class="my-4">
+                            <div class="categoryInputDisplay">
+                                <form action="#" id="categortNameForm">
+                                    <div class="input-group my-3">
+                                        <input type="text" class="form-control" placeholder="Enter Category Name" style="border: 1px solid #ced4da !important;" id="categoryName">
+                                        <button class="btn btn-outline-secondary" type="submit" id="categoryNameSubmit">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="accordion accordion-flush category" category="" id="categoryDisplay">
+                            </div>
+                        </div>
+                    </div>
+                    <form action="#" method="post" id="categorisationForm" class="categorisationForm col-12"></form>
+                        <button type="submit" class="btn btn-secondary text-light w-100">Submit </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

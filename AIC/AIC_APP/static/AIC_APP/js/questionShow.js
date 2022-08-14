@@ -8,7 +8,6 @@ $(document).ready(function () {
 // obj[name] = val;
 
 // ary.push(obj);
-  var temp = `static/AIC_APP/intents/intents${id}.json`;
   let temp1 = "";
   var temp2d="";
   var temp6='';
@@ -111,34 +110,36 @@ var qcount=0;
 
   $('#searchBox').on('keyup', function () {
     var ip = $('#searchBox').val();
-    var temp = `static/AIC_APP/intents/intents${id}.json`;
     let temp1 = "";
     let iterate = 0;
-    $.getJSON(temp, function (jd) {
+    $.ajax({
+      type:"GET",
+      url:"/getIntentsData",
+      success:function (result) {
+        jd = JSON.parse(result.data);
+        for (let i in jd) {
+          for (let j = 0; j < jd[i].length; j++) {
+            temp1 += `<div class="accordion__item accordion__item--active">`;
+            let isMatched = false;
+            const match = jd[i][j]['patterns'].filter(key => key.match(new RegExp(ip, "gi")) != null)
+            isMatched = match.some(key => key);
+            if (isMatched) {
+              for (n in jd[i][j]['patterns']) {
+                temp1 += `<button class="accordion__btn">
+                <span class="accordion__caption"><i class="far fa-lightbulb"></i>${jd[i][j]['patterns'][n]}</span>
+              </button>`;
+              }
 
-      for (let i in jd) {
-        for (let j = 0; j < jd[i].length; j++) {
-          temp1 += `<div class="accordion__item accordion__item--active">`;
-          let isMatched = false;
-          const match = jd[i][j]['patterns'].filter(key => key.match(new RegExp(ip, "gi")) != null)
-          isMatched = match.some(key => key);
-          if (isMatched) {
-            for (n in jd[i][j]['patterns']) {
-              temp1 += `<button class="accordion__btn">
-              <span class="accordion__caption"><i class="far fa-lightbulb"></i>${jd[i][j]['patterns'][n]}</span>
-            </button>`;
+              temp1 += `<div class="accordion__content fw-bold">
+                <p>${jd[i][j]['responses']}</p>
+              </div>
+              <span name='${iterate}' id='deleteQuestionSet' style="cursor: pointer;"><button type="button" class="closeall btn mt-2 mb-2 float-right mb-3">Delete</button></span></div>`;
+              iterate++;
             }
-
-            temp1 += `<div class="accordion__content">
-              <p>${jd[i][j]['responses']}</p>
-            </div>
-            <span name='${iterate}' id='deleteQuestionSet' style="cursor: pointer;"><button type="button" class="closeall btn mt-2 mb-2 float-right mb-3">Delete</button></span></div>`;
-            iterate++;
           }
         }
+        $('#questionGenerationdisplay').html(temp1);
       }
-      $('#questionGenerationdisplay').html(temp1);
-
     });
   });
 
@@ -161,7 +162,7 @@ var qcount=0;
           <span class="accordion__caption"><i class="far fa-lightbulb"></i>${jd[i][j]['patterns'][n]}</span>
         </button>`;
             }
-            temp1 += `<div class="accordion__content">
+            temp1 += `<div class="accordion__content fw-bold">
           <p>${jd[i][j]['responses']}</p>
         </div>
         <span name='${iterate}' id='deleteQuestionSet' style="cursor: pointer;"><button type="button" class="closeall btn mt-2 mb-2 float-right mb-3">Delete</button></span></div>`;
