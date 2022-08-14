@@ -2,6 +2,8 @@ import torch
 from transformers import T5ForConditionalGeneration,T5Tokenizer
 import json
 import os
+import language_tool_python
+tool = language_tool_python.LanguageToolPublicAPI('en-US')
 
 
 model = T5ForConditionalGeneration.from_pretrained('ramsrigouthamg/t5_paraphraser')
@@ -69,8 +71,8 @@ def run_main(id):
 
     model = T5ForConditionalGeneration.from_pretrained('ramsrigouthamg/t5_paraphraser')
     tokenizer = T5Tokenizer.from_pretrained('ramsrigouthamg/t5_paraphraser')
-    device = torch.device("cpu")
-    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # device = torch.device("cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
 
 
@@ -113,7 +115,9 @@ def parafromqueans(anslist, quelist,id):
         length = len(temp)
         for i in MainParaQueList:
             print(i)
-            y = {"tag": f"Data-{str(iterate + length)}", "patterns": i[0], "responses": anslist[iterate-1]}
+            temp1 = [tool.correct(j) for j in i[0]]
+            print(temp1)
+            y = {"tag": f"Data-{str(iterate + length)}", "patterns": temp1, "responses": anslist[iterate-1]}
             temp.append(y)
             iterate+=1
         write_json(data,id)

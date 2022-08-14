@@ -1,10 +1,16 @@
 from urllib import request
+
+from django.shortcuts import render
+from django.http import JsonResponse, HttpResponse
+from django.template import loader
+from googletrans import LANGUAGES
 from rest_framework.parsers import JSONParser
+from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework_api_key.models import APIKey
-from rest_framework import status
+from rest_framework import status, generics
 from .models import Api
 from .serializers import ApiSerialize
 from Predict.predict import predict_class, get_response
@@ -157,3 +163,28 @@ def manageApiKeys(request, api):
                 "status": "Failed",
                 "message": "Please Login First"
             },status.HTTP_403_FORBIDDEN)
+
+
+class getUI(generics.RetrieveAPIView):
+    renderer_classes = (TemplateHTMLRenderer,)
+    def get(self, request, *args, **kwargs):
+        if request.GET.get("api", None) != None:
+            try:
+                api = Api.objects.get(api_key=request.GET.get("api"))
+                if api.active == True:
+                    return Response({"languages":LANGUAGES},template_name="AIC_APP/chatAssistantUI.html")
+                else:
+                    return Response({
+                        "status": "Failed",
+                        "message": "API Key Error"
+                    }, status.HTTP_401_UNAUTHORIZED)
+            except Exception as e:
+                print(e)
+                return Response({
+                    "status": "Failed",
+                    "message": "Sorry We Can't Help You"
+                }, status.HTTP_404_NOT_FOUND)
+        else:
+            return Response({
+                "status": "Failed", "message": "Please Provide Active API Key"
+            }, status.HTTP_400_BAD_REQUEST)

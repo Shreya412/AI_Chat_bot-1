@@ -3,12 +3,6 @@
 #chatbox {
     margin-right: 1%;
 }
-body{
-    height: 100vh;
-    background-image: url(https://res.cloudinary.com/sih2022/image/upload/v1659005475/home-1-min_hawroc.png);
-    background-repeat: no-repeat;
-    background-size: 100vw 200vh;
-    background-position: center;}
 .box .bg {
     position: sticky;
     width: 100%;
@@ -62,6 +56,7 @@ body{
 }
 
 .wrapper .box .left .icon {
+
     background: #16222A;
     color: white;
     width: 40px;
@@ -69,6 +64,9 @@ body{
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper .box .right .icon {
@@ -79,11 +77,17 @@ body{
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper .box .item .icon i {
     width: 40px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper .box .item .icon svg {

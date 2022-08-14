@@ -12,32 +12,36 @@
     {% include "AIC_APP/navbar.html" %}
     {% include 'AIC_APP/loading.html' %}
     <section class="content row mx-0 my-md-5 py-md-4">
-        <div class="col-12 col-sm-12 col-md-5 d-flex flex-column justify-content-center align-items-center">
-            <h1>How To Use?</h1>
-            <div>
-                <h6>Step 1 : Type/Paste Question-Answers</h6>
-                <h6>Step 2 : Submit Question-Answers by entering twice</h6>
-                <h6>Step 3 : Click submit to process Question-Answers</h6>
-                <h6 class="text-muted">
-                    Note : tap on the submitted Question-Answers to Edit them.<br/>
-                    Clear Question/Answers to delete entire pair of Question-Answers
-                </h6>
+        {% if False %}
+            <div class="col-12 col-sm-12 col-md-5 d-flex flex-column justify-content-center align-items-center">
+                <h1>How To Use?</h1>
+                <div>
+                    <h6>Step 1 : Type/Paste Question-Answers</h6>
+                    <h6>Step 2 : Submit Question-Answers by entering twice</h6>
+                    <h6>Step 3 : Click submit to process Question-Answers</h6>
+                    <h6 class="text-muted">
+                        Note : tap on the submitted Question-Answers to Edit them.<br/>
+                        Clear Question/Answers to delete entire pair of Question-Answers
+                    </h6>
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-7 d-flex justify-content-center flex-wrap">
-            <div class="card text-light col-sm-12 col-12" id="questionAnswerInputContainer">
-                <form action="#" method="post" id="questionAnswersForm">
-                    <div class="card-body">
-                        <div class="form-control questionAnswerDisplayContainer">
-                            <div class="questionAnswerDisplay py-2" id="questionAnswerDisplay"></div>
-                            <h5 id="questionAnswerInputLabel">Enter Your Question Here :</h5>
-                            <textarea name="questionAnswerInput" id="questionAnswerInput" class="questionAnswerInput p-0" cols="30" rows="5" placeholder="Paste Your Question-Answers Here"></textarea>
+            <div class="col-12 col-sm-12 col-md-7 d-flex justify-content-center flex-wrap">
+                <div class="card text-light col-sm-12 col-12" id="questionAnswerInputContainer">
+                    <form action="#" method="post" id="questionAnswersForm">
+                        <div class="card-body">
+                            <div class="form-control questionAnswerDisplayContainer">
+                                <div class="questionAnswerDisplay py-2" id="questionAnswerDisplay"></div>
+                                <h5 id="questionAnswerInputLabel">Enter Your Question Here :</h5>
+                                <textarea name="questionAnswerInput" id="questionAnswerInput" class="questionAnswerInput p-0" cols="30" rows="5" placeholder="Paste Your Question-Answers Here"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-secondary text-light w-100" id="submitBtn">Submit</button>
-                </form>
+                        <button type="submit" class="btn btn-secondary text-light w-100" id="submitBtn">Submit</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        {% else %}
+            {% include "AIC_APP/modules/categorisation.html" %}
+        {% endif %}
     </section>
 </body>
 {% include "AIC_APP/modules/moduleScript.html" %}
