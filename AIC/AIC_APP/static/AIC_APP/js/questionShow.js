@@ -19,7 +19,6 @@ var qcount=0;
     success:(result)=>{
         jd=JSON.parse(result.data);
         for (let i in jd) {
-          console.log(i)
             for (let j = 0; j < jd[i].length; j++) {
               let temp5=[];
               var qc=0
@@ -49,7 +48,6 @@ var qcount=0;
 
       }
     }
-    console.log(nary);
     $('#questionGenerationdisplay').html(temp1);
     $('#temp2d').html(temp2d);
     },

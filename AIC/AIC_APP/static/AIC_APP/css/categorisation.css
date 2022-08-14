@@ -3,8 +3,7 @@
 }
 
 .categorisationChoiceForm{
-    transform: translateX(-100%);
-    display: none;
+    transform: translateX(0%);
     transition: 1s;
 }
 .categorisationFormSlide{

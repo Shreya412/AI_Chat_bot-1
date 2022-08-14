@@ -1,106 +1,21 @@
-.toggle-switch-checkbox {
-    display: none;
-  }
+.deleteAPI{
+  color: rgb(226, 0, 0);
+}
 
-  .toggle-switch {
-    width: 3em;
-    height: 1.5em;
-    border-radius: 1.875em;
-    background-color: #ccc;
-    display: inline-block;
-    position: relative;
-    text-indent: -150%;
-    clip: rect(0 0 0 0);
-    color: transparent;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+.manageAPI{
+  color: rgb(0, 166, 232);
+}
 
-  .toggle-switch:before,
-  .toggle-switch:after {
-    content: "";
-    display: block;
-    position: absolute;
-  }
+.deleteAPI:hover{
+  cursor: pointer;
+  color: rgb(172, 0, 0);
+}
 
-  .toggle-switch:before {
-    background-color: #777;
-    top: 0.25em;
-    left: 0.25em;
-    right: 0.25em;
-    bottom: 0.25em;
-    border-radius: 1.875em;
-  }
+.manageAPI:hover{
+  cursor: pointer;
+  color: rgb(0, 110, 154);
+}
 
-  .toggle-switch:after {
-    background-color: #fff;
-    width: 1.25em;
-    height: 1.00em;
-    top: 0.25em;
-    left: 0.25em;
-    border-radius: 1.875em;
-    cursor: pointer;
-    box-shadow: 0.125em 0.25em 0.375em rgba(85, 85, 85, 0.3);
-  }
-
-  .toggle-switch-checkbox:checked+.toggle-switch:before {
-    background-color: #4caf50;
-  }
-
-  .toggle-switch-checkbox:checked+.toggle-switch:after {
-    left: 1.5em;
-  }
-
-  .csstransitions.csstransforms .toggle-switch:before {
-    -webkit-transition-property: background-color;
-    -moz-transition-property: background-color;
-    transition-property: background-color;
-    -webkit-transition-duration: 250ms;
-    -moz-transition-duration: 250ms;
-    transition-duration: 250ms;
-    -webkit-transition-timing-function: ease;
-    -moz-transition-timing-function: ease;
-    transition-timing-function: ease;
-  }
-
-  .csstransitions.csstransforms .toggle-switch:after {
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    transition-property: transform;
-    -webkit-transition-duration: 100ms;
-    -moz-transition-duration: 100ms;
-    transition-duration: 100ms;
-    -webkit-transition-timing-function: ease-in-out;
-    -moz-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
-  }
-
-  .csstransitions.csstransforms .toggle-switch-checkbox:checked+.toggle-switch:after {
-    left: inherit;
-    -webkit-transform: translateX(4em);
-    -moz-transform: translateX(4em);
-    -ms-transform: translateX(4em);
-    -o-transform: translateX(4em);
-    transform: translateX(4em);
-  }
-
-  .GenerateAPIkey{
-    text-align: center;
-    color: #1c1c5d;
-  }
-  .btntogenerateapi{
-    background-color: #1c1c5d;
-  padding: 6px 18px;
-  border-radius: 19px;
-  color: white;
-  font-size: 17px;
-  border: 1px solid white;
-  }
-  .btntogenerateapi:hover{
-    cursor: pointer;
-  }
-  .tooptipshow:hover{
-    cursor: pointer;
-  }
+.clipboard:hover{
+  cursor: pointer;
+}

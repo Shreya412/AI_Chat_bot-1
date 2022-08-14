@@ -1,385 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>API Documentation</title>
-  <style>
-    body{
-      height: 100vh;
-    background-image: url(https://res.cloudinary.com/sih2022/image/upload/v1659005475/home-1-min_hawroc.png);
-    background-repeat: no-repeat;
-    background-size: 100vw 200vh;
-    background-position: center;
-      /* background-image: url('https://res.cloudinary.com/sih2022/image/upload/v1659005475/home-1-min_hawroc.png'); */
-    }
-
-    .GenerateAPIkey{
-      text-align: center;
-      color: #1c1c5d;
-    }
-    .btntogenerateapi{
-      background-color: #1c1c5d;
-    padding: 6px 18px;
-    border-radius: 19px;
-    color: white;
-    font-size: 17px;
-    border: 1px solid white;
-    }
-    .btntogenerateapi:hover{
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage API</title>
+  {% load static %}
+  {% include 'AIC_APP/header.html' %}
 </head>
-
 <body>
-  
-  <div class="GenerateAPIkey mt-3 mb-4">
-    <h2 class="mb-4">Generate API</h2>
-    <form action="" name="Generateapi" id="Generateapi">
-      <button class="btntogenerateapi" id="btntogenerateapi">
-        Generate
-      </button>
-    </form>
-  </div>
-  <!-- <p>{{ request.session.Id}}</p> -->
-  <div class="container">
-    <div class="table-responsive">
+  {% include 'AIC_APP/navbar.html' %}
 
-  <table class=" col-md-12 col-sm-12 col-12 table table-striped">
-    <thead>
-      <tr class="">
-        <th scope="col">Key</th>
-        <th scope="col">Name</th>
-        <th scope="col">Status</th>
-        <th scope="col" class="text-center">Actions</th>
-      </tr>
-    </thead>
-    <tbody id="tablebody" class="tablebody">
-      <!-- <tr>
-        <td scope="row">99a73abfa1fed453b734fd5bf57b998b</td>
-        <td id="apiname">Default</td>
-        <td id="apistatus">Disable</td>
-        <td>
-          <input id="toggle-switch-1" type="checkbox" class="toggle-switch-checkbox">
-          <label for="toggle-switch-1" class="toggle-switch">Label</label>
-          <button id="deleteapi" class="deleteapi">Delete</button>
-          <button id="editapi" class="editapi">Edit</button>
-
-        </td>
-      </tr> -->
-
-    </tbody>
-  </table>
-</div>
-</div>
-
-  <!-- Edit modal  -->
-
-  <div class="modal" tabindex="-1" role="dialog" id="EditModal" style="display: none;">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade" id="editAPI">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit API</h5>
-          <button type="button" class="close" id="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h5 class="modal-title">Edit API Key Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <form action="" id="editform">
-            <input type="number" name="id2" hidden="" id="id2">
-            <input type="text" name="apikey2" hidden="" id="apikey2">
-            Name: <input type="text" name="apiname" id="apiname"><br><br>
-            Status : <input type="checkbox" name="enableCheckbox" id="enableCheckbox"> Enable
-
-        </div>
-        <div class="modal-footer">
-          <input type="submit" class="btn btn-primary" id="edsave2" value="Save">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closemodal2">Close</button>
-          </form>
-        </div>
+        <form name="" id="APIForm">
+          <div class="modal-body">
+              <div class="mb-3">
+                <label for="apiName" class="form-label">API Key Name</label>
+                <input type="text" class="form-control" id="apiName" required>
+                <div class="form-check form-switch my-2">
+                  <input class="form-check-input" type="checkbox" id="activeAPI" checked>
+                  <label class="form-check-label" for="activeAPI">Active</label>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="APIModelClose">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script>
-      $('[data-toggle="tooltip"]').click(function () {
-          $('[data-toggle="tooltip"]').tooltip("show");
-
-       });
-      function copyclipboard(element) {
-        // console.log(element);
-  var copyText = element;
-  console.log(copyText);
-
-  navigator.clipboard.writeText(copyText.innerText);
-
-  element.setAttribute('title','copied');
-  element.setAttribute('data-original-title','copied');
-var apiid=element.id;
-$('#'+apiid).tooltip("show");
-
-}
-function copied(element) {
-
-  element.setAttribute('title','Copy to clipboard');
-  element.setAttribute('data-original-title','');
-
-
-}
-    </script>
-  <script>
-
-    $(document).ready(function () {
-
-
-      // fetch api 
-      function loadtable() {
-        $.ajax({
-          url: '/AIC/me/api/keys/',
-          type: "GET",
-          success: function (data) {
-            console.log(data);
-            console.log(data.length);
-            $.each(data, function (key, value) {
-              // $('#tablebody').html="";
-              var activestatusload;
-              if (value.active == true) {
-                activestatusload = "Active";
-              }
-              else {
-                activestatusload = "Disable"
-
-              }
-              $('#tablebody').append(`<tr>
-        <td scope="row" id="apikey`+ value.id + `" data-toggle="tooltip" data-placement="top" title="Copy to clipboard" class="tooptipshow" onclick="copyclipboard(this)" onmouseout="copied(this)">` + value.api_key + `</td>
-        <td id="apiname`+ value.id + `">` + value.name + `</td>
-        <td id="apistatus`+ value.id + `">` + activestatusload + `</td>
-        <td class="text-center">
-          
-          <button id="deleteapi`+ value.id + `" class="deleteapi btn btn-danger mr-4">Delete</button>
-          <button id="editapi`+ value.id + `" class="editapi btn btn-warning">Edit</button>
-
-        </td>
-      </tr>`);
-            })
-          }
-
-        })
-      }
-
-      loadtable();
-
-      //hide editmodal
-      $(document).on("click", "#close", function () {
-
-        $('#EditModal').hide();
-      });
-      $(document).on("click", "#closemodal2", function () {
-
-        $('#EditModal').hide();
-      });
-
-
-      //toggle switch
-
-      // $(document).on("change", ".toggle-switch-checkbox", function () {
-
-      //   var eid = $(this).attr('id');
-      //   // console.log(eid);
-      //   var lastidchar = (eid).replace(/[^\d]*/g, '');
-      //   var apistatus = $('#' + eid + '').is(":checked");
-      //   if (apistatus == true) {
-      //     $('#apistatus' + lastidchar + '').text("Active");
-      //   }
-      //   else {
-      //     $('#apistatus' + lastidchar + '').text("Disable");
-
-      //   }
-
-      // })
-
-
-
-
-
-
-
-      // generate api 
-      $(document).on("click", "#btntogenerateapi", function (e) {
-        e.preventDefault();
-        $.ajax({
-          url: '/AIC/me/api/keys/',
-          type: "POST",
-          success: function (data) {
-            console.log(data);
-            if (data.status == "success") {
-              // loadtable();
-              window.location.href="/api";
-            }
-
-          }
-        })
-
-      })
-      // loadtable();
-
-
-
-      // delete api key 
-      $(document).on("click", ".deleteapi", function () {
-
-        var eid = $(this).attr('id');
-        console.log(eid);
-        var lastidchar = (eid).replace(/[^\d]*/g, '');
-
-        var apikeytext = $('#apikey' + lastidchar).text();
-        console.log(apikeytext);
-        console.log("/AIC/me/api/keys/" + apikeytext)
-
-        $.ajax({
-          url: '/AIC/me/api/keys/' + apikeytext,
-          type: "DELETE",
-          success: function (data) {
-            console.log(data);
-            window.location.href="/api";
-
-
-
-          }
-        })
-        // loadtable();
-
-
-      })
-
-
-      // chnage the name of api 
-
-      $(document).on("click", ".editapi", function () {
-        $('#EditModal').show();
-
-
-        var eid = $(this).attr('id');
-        console.log(eid);
-        var lastidchar = (eid).replace(/[^\d]*/g, '');
-
-        var apikeytext = $('#apikey' + lastidchar).text();
-        console.log(apikeytext);
-        console.log("/AIC/me/api/keys/" + apikeytext);
-
-        var activestatus = $('#apistatus' + lastidchar).text();
-        var currentname = $('#apiname' + lastidchar).text();
-        var activebool;
-        if (activestatus == "false" || activestatus == "Disable") {
-          activebool = 0;
-        }
-        else {
-          activebool = 1;
-        }
-        console.log("Active status : " + activebool);
-        console.log("Current NAme: " + currentname);
-
-
-        $.ajax({
-          url: '/AIC/me/api/keys/'+apikeytext,
-          type: "GET",
-          success: function (data) {
-            console.log("data : "+data['message'].api_key);
-            $('#apiname').val(data['message'].name);
-            $('#id2').val(data['message'].id);
-            $('#apikey2').val(data['message'].api_key);
-            if (data['message'].active == true) {
-              $('#enableCheckbox').attr('checked', true);
-
-            }
-            else {
-
-              $('#enableCheckbox').attr('checked', false);
-
-
-            }
-
-
-
-
-          }
-        })
-        // loadtable();
-
-
-      })
-
-
-
-
-      // modal saved 
-
-      $("#edsave2").on("click", function (e) {
-        e.preventDefault();
-        var enableapi;
-        var arr = $("#editform").serializeArray({
-          checkboxesAsBools: true
-        });
-
-        console.log(arr);
-        if(arr.length==3){
-enableapi=0;
-        }
-        if(arr.length==4){
-          enableapi=1;
-        }
-        var obj2 = {};
-        obj2['activate']=enableapi;
-        obj2["name"]=$('#apiname').val();
-
-        console.log(obj2);
-        var jstring = JSON.stringify(obj2);
-        console.log(jstring);
-
+  <div class="my-2 d-flex flex-wrap">
+    <h2 class="text-center col-md-12 col-12">
+      Manage API
+    </h2>
+    <button class="btn btn-success mx-auto rounded-2" id="generateAPIKey"><i class="fa-solid fa-plus mx-2"></i>Create API Key</button>
+  </div>
+  <div class="container table-responsive">
+    <table class="table table-light table-striped table-hover">
+      <thead class="table-head-dark">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">API Key</th>
+          <th scope="col">Copy</th>
+          <th scope="col">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col" class="text-center">Delete</th>
+          <th scope="col" class="text-center">Manage</th>
+        </tr>
+      </thead>
+      <tbody id="APIkeys">
+      </tbody>
+    </table>
+</div>
+<div class="position-absolute bottom-0 end-0 m-4" id="notifications">
   
-            $.ajax({
-                url: '/AIC/me/api/keys/'+$('#apikey2').val(),
-                type: "PUT",
-                data: jstring,
-                success: function(data) {
-                    // console.log("message");
-                    console.log(data);
-              
-                    setTimeout(function() {
-
-                        document.location.reload(true);
-                    }, 50)
-                }
-            });
-        // }
-      });
-    })
-
-
-
-
-  </script>
-
+</div>
 </body>
-
+{% include 'AIC_APP/script.html' %}
 </html>

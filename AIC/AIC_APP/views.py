@@ -37,7 +37,7 @@ except Exception as e:
     print("Run main load failed")
 
 
-# for text to speech module
+for text to speech module
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 # print(voices[1].id)
