@@ -12,7 +12,7 @@
     {% include "AIC_APP/navbar.html" %}
     {% include 'AIC_APP/loading.html' %}
     <section class="content row mx-0 my-md-5 py-md-4">
-        {% if False %}
+        {% if True %}
             <div class="col-12 col-sm-12 col-md-5 d-flex flex-column justify-content-center align-items-center">
                 <h1>How To Use?</h1>
                 <div>
@@ -46,7 +46,8 @@
                                             <div class="input-group mb-3">
                                             <span class="input-group-text p-0 border-0 outline-0">
                                                 <select id="base" class="form-select" disabled="true">
-                                                    <option value="class" selected>Class</option>
+                                                    <option value="selector" selected>Selector</option>
+                                                    <option value="class">Class</option>
                                                     <option value="tag">Tag</option>
                                                     <option value="id">ID</option>
                                                 </select>
@@ -56,7 +57,8 @@
                                             <div class="input-group mb-3">
                                             <span class="input-group-text p-0 border-0 outline-0">
                                                 <select id="question" class="form-select" disabled="true">
-                                                    <option value="class" selected>Class</option>
+                                                    <option value="selector" selected>Selector</option>
+                                                    <option value="class">Class</option>
                                                     <option value="tag">Tag</option>
                                                     <option value="id">ID</option>
                                                 </select>
@@ -66,7 +68,8 @@
                                             <div class="input-group mb-3">
                                             <span class="input-group-text p-0 border-0 outline-0">
                                                 <select id="answer" class="form-select" disabled="true">
-                                                    <option value="class" selected>Class</option>
+                                                    <option value="selector" selected>Selector</option>
+                                                    <option value="class">Class</option>
                                                     <option value="tag">Tag</option>
                                                     <option value="id">ID</option>
                                                 </select>

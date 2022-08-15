@@ -40,11 +40,14 @@ $(document).ready(()=>{
             return ".";
         }
         else if(value=="id"){
-            return "#"
+            return "#";
+        }
+        else if(value=="selector"){
+            return "";
         }
         else{
             alert("Error ! Please Enter Valid Input");
-            window.location.href="/linkinput";
+            window.location.href="/linkInput";
         }
     }
 
@@ -59,11 +62,11 @@ $(document).ready(()=>{
             const baseClass =  convertEquiv($("#base").val())+$("#linkBaseClassInput").val();
             const questionClass =  convertEquiv($("#question").val())+$("#linkQuestionClassInput").val();
             const answerClass =  convertEquiv($("#answer").val())+$("#linkAnswerClassInput").val();
-            query = {link:input,baseClass,questionClass,answerClass};
+            query = {link:input,baseClass,questionClass,answerClass,advance:true};
         }
         else
         {
-            query = {link:input};
+            query = {link:input,advance:false};
         }
         console.log(query);
         $(".loadingBox").fadeIn();

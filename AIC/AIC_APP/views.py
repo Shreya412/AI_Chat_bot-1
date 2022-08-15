@@ -76,9 +76,9 @@ def takecommand():
         return YourText
 
 
-
-# data come from form ......from js
-# data send to js file for display in chatbot
+#
+# # data come from form ......from js
+# # data send to js file for display in chatbot
 
 
 # Landing page of website
@@ -116,17 +116,27 @@ def linkSubmit(request):
     baseClass = request.POST.get("baseClass","")
     questionClass = request.POST.get("questionClass", "")
     answerClass = request.POST.get("answerClass","")
-    if baseClass!="":
-        quelist,anslist = getDataWithClass(data,baseClass,questionClass,answerClass)
-        parafromqueans(anslist, quelist, id)
-    elif questionClass!="":
-        anslist =getDataWithAnsClass()
+    advance = request.POST.get("advance","")
+    print(questionClass, answerClass, baseClass, advance)
+    if advance=="true":
+        if (baseClass!="" and questionClass!="" and answerClass!="") or (baseClass=="" and questionClass!="" and answerClass!=""):
+            quelist,anslist = getDataWithClass(data,baseClass,questionClass,answerClass)
+            parafromqueans(anslist, quelist, id)
+        elif (baseClass!="" and questionClass=="" and answerClass!="") or (baseClass=="" and questionClass=="" and answerClass!=""):
+            anslist =getDataWithAnsClass(data,baseClass,answerClass)
+            anslist = [i for i in anslist if len(i) > 0]
+            for i in anslist:
+                print(i)
+            finalQuelist = generatefromOnlyAns(anslist)
+            parafromqueans(anslist, finalQuelist, id)
+        else:
+            print("Malformed Request")
+            return HttpResponse("Failed",status=401)
+    else:
+        anslist = getData(data)
+        anslist = [i for i in anslist if len(i)>0]
         finalQuelist = generatefromOnlyAns(anslist)
         parafromqueans(anslist, finalQuelist, id)
-    else:
-        siteData = getData(data)
-        finalQuelist = generatefromOnlyAns(siteData)
-        parafromqueans(siteData, finalQuelist, id)
     print("Sucessfully answering done in json file")
     return HttpResponse("success")
 
@@ -292,8 +302,8 @@ def trainModel(request):
 
 # predict ans from input
 def takeOutputdp(request):
-    intents = json.loads(open(f"{os.getcwd()}{os.sep}AIC_APP{os.sep}static{os.sep}AIC_APP{os.sep}intents{os.sep}intents{id}.json", encoding="utf-8").read())
     id = request.session['Id']
+    intents = json.loads(open(f"{os.getcwd()}{os.sep}AIC_APP{os.sep}static{os.sep}AIC_APP{os.sep}intents{os.sep}intents{id}.json", encoding="utf-8").read())
 
     # This speak variable is given from frontend if speak is true then its take input from microphone and speak loud otherwise as normal
     # condition
@@ -697,7 +707,13 @@ def translate(request):
     message = request.POST.get("message")
     source = request.POST.get("source")
     destination = request.POST.get("destination")
-    return JsonResponse({"status": "success", "message": translator.translate(message, src=source, dest=destination).text})
+    reverse = request.POST.get("reverse")
+    print(message,source,destination)
+    if reverse!="true":
+        return JsonResponse({"status": "success", "message": translator.translate(message, src=source, dest=destination).text})
+    else:
+        return JsonResponse(
+            {"status": "success", "message": translator.translate(message, src=destination, dest=source).text})
 
 def documentation(request):
     return render(request,"AIC_APP/documentation.html")
