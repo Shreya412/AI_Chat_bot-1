@@ -67,12 +67,9 @@ class ChatAssistantView(APIView):
 class ApiKeyView(APIView):
     # print(request.session)
     def get(self, request, *args, **kwargs):
-        print(request.session.keys())
         if "Id" in request.session.keys():
             apis = Api.objects.filter(user_id=request.session["Id"])
-            print(apis)
             serializer = ApiSerialize(apis, many=True)
-            print(serializer.data)
             return Response(serializer.data)
         else:
             return Response({
@@ -132,6 +129,7 @@ def manageApiKeys(request, api):
                     "message": serializer.data
                 },status.HTTP_200_OK)
             except Exception as e:
+                print(e)
                 return Response({
                     "status": "Failed",
                     "message": "API Key Doesn't Exist"

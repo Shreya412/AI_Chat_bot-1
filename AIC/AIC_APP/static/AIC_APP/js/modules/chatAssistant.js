@@ -24,7 +24,7 @@ $(document).ready(()=>{
         $(".submitBtn").addClass("submitBtnOut", 500);
         $(".submitBtnOut").removeClass("submitBtn");
         feedback = false;
-        let input = $('.box .temp .msg p').text();
+        let input = $('.box .temp .msg p').attr("eng");
         let destination = $("#languages").val();
         $(".box .temp").removeClass("temp");
         inputFlag=false;
@@ -165,12 +165,12 @@ $(document).ready(()=>{
         
     })
 
-    const translate = async (input,source)=>{
+    const translate = async (input,source,reverse="false")=>{
         let data;
         await $.ajax({
             type: "POST",
             url: "/translate",
-            data: { message: input,source, destination:"en"},
+            data: { message: input,source, destination:"en", reverse},
             success: function(response) {
                 data = response.message;
             },
@@ -213,40 +213,61 @@ $(document).ready(()=>{
                 if(queList.length>0 && $("#suggestion").length==0)
                 {
                     translateData = $(".box .temp").remove();
+                    if(source!="en")
+                    {
+                        suggestionHeading = await translate("Are you searching for?",source,"true");
+                    }
+                    else{
+                        suggestionHeading = "Are you searching for?";
+                    }
+
                     let temp = `<div class="item left d-flex justify-content-start gap-2 align-items-center m-3 col-10" id="suggestion">
                                                 <div class="icon col-2">
                                                     ${chatbot}
                                                 </div>
                                                 <div class="msg text-start">
-                                                    <h6 class="px-2 py-3">Are you searching for?</h6>`;
+                                                    <h6 class="px-2 py-3">${suggestionHeading}</h6>`;
                     for(i=0;i<3 && i<queList.length;i++)
                     {
-                        temp+=`<p>
-                                    <button class="btn btn-secondary text-start btnSuggestion" name="${queList[i]}">${queList[i]}</button>
+                        let response = await translate(queList[i],source,"true");
+                        temp+=`<p name="${queList[i]}" translated="${response}">
+                                    <button class="btn btn-secondary text-start btnSuggestion" name="${queList[i]}" translated="${response}">${response}</button>
                                 </p>`;
-                    }                                            
+                    }
                     temp+=`</div>
                             </div>`;
                     temp = $(temp);
-                    $(".box").append(temp);
-                    temp.fadeIn(200);
-                    $(".box").append(translateData);
-                    translateData.fadeIn(200);
-                    $(".box").animate({ scrollTop: $('.box').prop("scrollHeight") }, 1000);
+                    if($("#suggestion").length==0)
+                    {
+                        $(".box").append(temp);
+                        temp.fadeIn(200);
+                        $(".box").append(translateData);
+                        translateData.fadeIn(200);
+                        $(".box").animate({ scrollTop: $('.box').prop("scrollHeight") }, 1000);
+                    }
                 }
                 else
                 {
                     if(queList.length>0)
                     {
+                        if(source!="en")
+                        {
+                            suggestionHeading = await translate("Are you searching for?",source,"true");
+                        }
+                        else{
+                            suggestionHeading = "Are you searching for?";
+                        }
                         let temp = `<div class="icon col-2">
                                         ${chatbot}
                                     </div>
                                     <div class="msg text-start">
-                                        <h6 class="px-2 py-3">Are you searching for?</h6>`;
+                                        <h6 class="px-2 py-3">${suggestionHeading}</h6>`;
                         for(i=0;i<3 && i<queList.length;i++)
                         {
-                            temp+=`<p>
-                                        <button class="btn btn-secondary text-start btnSuggestion" name="${queList[i]}">${queList[i]}</button>
+                            let response = await translate(queList[i],source,"true")
+                            console.log(queList[i]);
+                            temp+=`<p name="${queList[i]}" translated="${response}">
+                                        <button class="btn btn-secondary text-start btnSuggestion" name="${queList[i]}" translated="${response}">${response}</button>
                                     </p>`;
                         }        
                         temp+=`</div>`;
@@ -261,7 +282,7 @@ $(document).ready(()=>{
                                             <i class="bi bi-person-fill"></i>
                                         </div>
                                         <div class="msg px-2 text-start">
-                                            <p>${data}</p>
+                                            <p eng="${data}">${data}</p>
                                         </div>
                                     </div>`);
                 $(".box").append(temp1);
@@ -284,17 +305,19 @@ $(document).ready(()=>{
     $(document).on("click",".btnSuggestion",(e)=>{
         if($('.box .temp').length>0)
         {
-            $('.box .temp .msg p').text(e.target.name);
+            $('.box .temp .msg p').text($(e.target).attr("translated"));
+            $('.box .temp .msg p').attr("eng",$(e.target).attr("name"))
             $("#eform").submit();
         }
         else
         {
+            console.log("HK"+e.target);
             let temp1 = $(`<div class="item right d-flex justify-content-start gap-2 align-items-center m-3 col-10 temp">
                                     <div class="icon col-2">
                                         <i class="bi bi-person-fill"></i>
                                     </div>
                                     <div class="msg px-2 text-start">
-                                        <p>${e.target.name}</p>
+                                        <p eng="${$(e.target).attr("name")}">${$(e.target).attr("translated")}</p>
                                     </div>
                                 </div>`);
             $(".box").append(temp1);

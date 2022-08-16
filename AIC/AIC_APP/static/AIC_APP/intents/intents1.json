@@ -3,194 +3,124 @@
         {
             "tag": "Data-1",
             "patterns": [
-                "Who gives special scholarships for technical education?",
-                "Who manages the scholarship for technical education?",
-                "What is special scholarship to promote technical education?",
-                "Who runs special scholarship in advance of Technical Education?",
-                "Which category of scholarship is dedicated to creating technical and interdisciplinary scholarships?",
-                "Which institutes offer a scholarship to promote technical education?",
-                "Who runs the scholarship to help promote technical education?",
-                "Who organizes a scholarship to promote technical education?",
-                "Who establishes a specific scholarship to promote technical education?"
+                "What is Aroma Set's official website?",
+                "What is the official site of Aroma Set?",
+                "What's the official website of Aroma Set?",
+                "Which is the official website of Aroma Set?",
+                "What is the Aroma set website?"
             ],
-            "responses": "Explore various, schemes and special scholarship run by AICTE to promote technical education"
+            "responses": "Official Website\r\n                            https://www.mygov.in/covid-19\nInformation Regarding Arogya\r\n                                Setu App\nLatest\r\n                            Information Regarding corona virus"
         },
         {
             "tag": "Data-2",
             "patterns": [
-                "What is the purpose of a scheme to foster cross-border partnership?",
-                "What is the purpose of cross-border partnerships?",
-                "What's the aim of sharing cross-border partnerships?",
-                "What is the purpose of creating cross-border partnerships?",
-                "What's the purpose of a scheme to promote cross-border partnerships?",
-                "What is the purpose of building cross-border partnerships?",
-                "What is the purpose of raising money for transborder partnerships?"
+                "What is the name of the IT department team?",
+                "What is the name of a team of IT department team members?",
+                "What is the name of the IT Department Team?",
+                "What's the name of the IT team?",
+                "What is the name of an IT team?",
+                "Which Team for IT department members is best?",
+                "What is the name of IT department team members?",
+                "What is the IT team's name, and how do you find the teams of IT people?",
+                "What is the name of IT department?",
+                "What is the Name of a Team within the IT team?"
             ],
-            "responses": "Scheme to foster cross-border partnerships focussed on creating a platform that opens the path for collaborative research between Canada and India to a wider pool of student talent in India."
+            "responses": "Project Title :\r\n                        Health City\nDepartment :\r\n                        IT Department\nTeam Members :\r\n                        Bhumi Sharma,Aman Shaikh,Arpan Prajapati,Meet Prajapati,Ravi Patel,Istiyak Shaikh\r\n                    \nGuide Name :\r\n                        Prof. Madhuri Patel"
         },
         {
             "tag": "Data-3",
             "patterns": [
-                "What are ACTE child approved by its neophytes?",
-                "What has ACTE approved for children from any category?",
-                "What shall be the reason of the ACTE acceptance for children from any one of the following categories?",
-                "What has ACTE approved for children from all categories of children?",
-                "What category have ACTE approved for children and whose parents?",
-                "Which category for children is approved by ACTE?",
-                "What have the ACTE approved for children from any one of the following categories?",
-                "What is ACTE approved for children from any one of the following categories?",
-                "What has ACTE approved for the child from any one of the following categories?"
+                "What is coder's club guide?",
+                "What is coder's club?",
+                "What's the name of the Coder's club?",
+                "What is the name of a coder's club guide?",
+                "Which coder's club is best?",
+                "What is the Coder's Club Guide?",
+                "What is the coders club?",
+                "What is the name of coders clubs?"
             ],
-            "responses": "AICTE has approved 'AICTE \u2013 SWANATH SCHOLARSHIP SCHEME' for children from any one of the following categories:<br/>           1. Orphan <br/>           2. Either or both parents died due to Covid-19 <br/>           3. Wards of Armed Forces and Central Paramilitary Forces martyred in action (Shaheed) <br/>            to provide them financial support of Rs. 50,000/- per annum for every year of study."
+            "responses": "Project Title :\r\n                        Food Drive\nDepartment :\r\n                        IT Department\nTeam Members :\r\n                        Coder\u2019s Club\r\n                    \nGuide Name :\r\n                        Dr. Hiteishi Diwanji"
         },
         {
             "tag": "Data-4",
             "patterns": [
-                "What is the name of ACTE Study Tour Scheme for Himachal Pradesh?",
-                "What is the name of the ACTE Study Tours in Himachal Pradesh?",
-                "What is the name of the ACTE Scheme for study tour of Fatal Nigeria (Mumbai)?",
-                "What is the name of the ACTE study tour in FATAL TUNNEL in Himachal Pradesh?",
-                "Which institute for ACTE exam is BestATAL-TUNNEL? Which institute was the best?",
-                "What is the ACTE Scheme for study tour of FATAL TUNNEL, Himachal Pradesh?",
-                "What is the name of the ACTE Scheme for study tour of FATAL NINE, Himachal Pradesh?",
-                "What is the name of ACTE Scheme for study tour of FATAL TUNNEL, Himachal Pradesh?",
-                "What is the name of the ACTE Scheme, the study tour of FATAL TUNNEL, Himachal Pradesh?"
+                "What is the name of a Project Name: Covid Stats Department Team Members?",
+                "What is the name of the Project Name: Covid Stats Department Team members?",
+                "Which Team Member of Covid Stats Department also are selected for Project?",
+                "What is the name of the project name and team members of Covid Stats Department?",
+                "What is the name of Covid Stats Department Members?",
+                "What is the Name of the Project Name : Covid Stats Department Team Members (Project Teams)?"
             ],
-            "responses": "AICTE Scheme for study tour of ATAL TUNNEL, Himachal Pradesh\u2013 YOUTH UNDERTAKING VISIT FOR ACQUIRING KNOWLEDGE (YUVAK)"
+            "responses": "Project Title :\r\n                        Covid Stats\nDepartment :\r\n                        IT Department\nTeam Members :\r\n                        Smit Rami,Smit Mistry\r\n\r\n                    \nGuide Name :\r\n                        Prof. Madhuri Patel"
         },
         {
             "tag": "Data-5",
             "patterns": [
-                "What is the theme of the ACTE LITERATI AWARD-2021-22?",
-                "What is the theme of ACTE's Lillavati Award 2021-22?",
-                "What's the aim of LITERATI 2018/2019?",
-                "What is the theme of ACTE's GUJARATI AWARD-2021-22?",
-                "Which is the theme of AMARAVATI AWARD-2021-22?",
-                "What is the theme of ACTE LITERATI AWARD-2021-22?",
-                "What is the theme of LITERATI AWARD-2021-22?",
-                "What is the theme of ACTE's LITERATI AWARD 2021-22?"
+                "What is the name of the project that consists of Drastic Dark, Vaibhavi Gelati, K.V. Kaikshi. K.R. Kaikshi?",
+                "What is the name of a new project called 'Vashti Dark' project?",
+                "What is the name of project, as a project of Drastic Dark is involved and consists of Vasubhavi Gelati and Drastic Dark together?",
+                "What is the name of the project that consists of Drastic Dark, Vaibhavi Gelati, K.B.K.K.K.K.K.?",
+                "What is the name of the project that consists of Drastic Dark, Vaibhavi Gelati, Kendra Singh Jain. The projects are to be announced in november 2016.",
+                "Which project for Drastic Dark project starts with Vedhavi Gelati?",
+                "What is the name of the project that consists of Drastic Dark, Vaibhavi Gelati, Kumar Singh and several of his assistants?",
+                "What is the name of the project that consists of Drastic Dark, Vaibhavi Gelati and K. Bhesh Tiwari?",
+                "What is the name of the project that consists of Drastic Dark, Vaibhavi Gelati, K. P. Sivasnagar, Dr. Viral MHRA.",
+                "What is the name of the project that consists of Drastic Dark, Vaibhavi Gelati, Drashti Dark?"
             ],
-            "responses": "AICTE intends to seek applications for AICTEs LILAVATI AWARD-2021-22 based on the theme \u201cWomen Empowerment\u201d from the eligible teams of AICTE approved institutions, who have undertaken remarkable intervention for the cause and made an impact that showcases their work under eight different sub-themes."
+            "responses": "Project Title :\r\n                        EduLane\nDepartment :\r\n                        IT Department\nTeam Members :\r\n                        Drashti Darji,Vaibhavi Ghelani,Krima Patel,Trushali Satasiya\r\n\r\n                    \nGuide Name :\r\n                        Dr. Hiteishi Diwanji"
         },
         {
             "tag": "Data-6",
             "patterns": [
-                "What is the name of the scholarship given to a GATE/PAT qualified student admitted to a recognized university?",
-                "What is the name of a scholarship awarded to full time GATE/PAT qualified students admitted to the ACTE approved Institutions/Colleges?",
-                "What is the name of the scholarship awarded to GATE/PAT qualified students admitted to ACTE approved Institutions/Colleges?",
-                "What is the name of scholarships awarded to GATE / MAP qualified students admitted to ACTE approved Institutions/Colleges?",
-                "Which scholarship for GATE/PAT 2019 is best?",
-                "What is the name of the scholarship awarded to non-gate qualified students admitted to ACTE approved institutions/Colleges?"
+                "What project has developed on fake news detection?",
+                "What is the name of a project focusing on fake news Detection?",
+                "What is the name of a project that focuses on fraud detection?",
+                "What's the name of the project that focuses on Fake News Detection?",
+                "What is the name of a project to analyze fake news?",
+                "Which project for fake news discovery is best?",
+                "What is the name of a project focusing on Fake News Detection?"
             ],
-            "responses": "Scholarship is awarded to full time GATE/GPAT qualified students admitted to M.E./ M. Tech/ M. Arch and M.Pharma courses in AICTE approved Institutions/Colleges @Rs. 12,400/- PM/ student."
+            "responses": "Project Title :\r\n                        Fake News Detection\nDepartment :\r\n                        IT Department\nTeam Members :\r\n                        Priyanka Dobariya,Heena Katariya,Mashirabanu,Neil Saxena,Pansuriya Ravi,Parmar Hardik,Dubendu Singh,Vishal Sakariya\r\n\r\n                    \nGuide Name :\r\n                        Dr. Hiteishi Diwanji"
         },
         {
             "tag": "Data-7",
             "patterns": [
-                "Who approves Technical Institutes/University Departments for conducting research in thrust areas?",
-                "What shall be the reason of the approval by Technical Council for conducting research in thrust area?",
-                "Who approved Universities/University departments for conducting research in thrust areas?",
-                "Which Institution have approved Technical Institutes/University Departments for conducting research in thrust areas in India?",
-                "Which Universities approved the Technical Institutes/University Departments for conducting research in thrust areas?",
-                "Who approved the thrust areas in CS and ES; who approved the Universities and Technical Institutes for research?",
-                "Who approved University Departments and Technical Institutes for conducting research in thrust areas?",
-                "Who approved institutions (universities) for conducting research on thrust areas?",
-                "Who approved Technical Institutes/University Departments, to conduct research in thrust areas (Project field)?"
+                "What is the name of the department that is responsible for monitoring the status of bottles?",
+                "What is the name of a department responsible for monitoring the status of bottles?",
+                "What is the name of the department that is responsible for monitoring the status of a bottle?",
+                "What's the name of the department responsible for monitoring the status of bottle?",
+                "What is the division responsible for monitoring the status of a bottle?",
+                "Which department controls the temperature in a bottle?",
+                "What is the name of the department that monitors the status of bottle?",
+                "What is the name of the department responsible for monitoring the status of bottle?"
             ],
-            "responses": "Admitting full time meritorious research scholars by providing research fellowship who wants to seek admission to Ph.D. in AICTE approved Technical Institutes/University Departments for carrying out research in thrust areas"
+            "responses": "Project Title :\r\n                        SOIC2021_001236\nDepartment :\r\n                        EC Department\nTeam Members :\r\n                        Domadiya yash kamleshbhai\r\n\r\n                    \nProject Details :\r\n                        During recent years, due to advancement of technology many sophisticated techniques are used in healthcare. In the glucose bottle it is responsibility of nurse to observe the status of bottle. But now it based on electrolyte monitoring and any nurse can observe the status of bottle in monitor. But then after some time the observer can forgot to change the bottle. So some issue may generate some big problem. Today in medical sector automation takes part and it is very easy to operate and do work on that system. We have used some advance technique in our project that is used valve to stop the reverse liquid or blood from body to bottle. We have to put one valve between the bottle and node while is in our body. So when the liquid of bottle is low then that liquid reverse to the body and then blood also reverse with that liquid. So we require to stop that reverse liquid. We have used valve which stops the reverse liquid. The benefits of this project is that cost is low. We make a device which have very low cost because we have make a cost control using a many way. Other is device size is small. We make a device as possible as small and it is compact and very flexible with glucose bottle. The important things is that power consumption is low because our project is used only 5V dc. And also we have used a rechargeable battery with more life time."
         },
         {
             "tag": "Data-8",
             "patterns": [
-                "What is the name of the scholarship given to meritorious girls taking admission in ACTE approved technical institution?",
-                "What is the name of a scholarship given to incoming students of ACTE approved Technical institution?",
-                "What is the name of the scholarship awarded to girls taking admission in ACTE approved technical institution?",
-                "What's the name of the scholarship awarded for meritorious girls taking admission in ACTE approved Technical Institution?",
-                "What is the name of scholarships given to meritorious girls taking admission in ACTE approved technical colleges?",
-                "Which scholarship for meritorious girls is awarded by ACTE?",
-                "What is the name of the scholarship awarded to meritorious girls taking admission in ACTE approved technical institutions?",
-                "What is the name of the scholarship awarded to meritorious girls taking admission in ACTE approved Technical Institutions?",
-                "What is the Name of Scholarship awarded to meritorious girls taking admission in ACTE approved Technical Institution?"
+                "What is the name of a project that is not installed in a smart device?",
+                "What is the name of a project that can be installed in any smart device or application?",
+                "What's the name of the project that can be installed on any smart device?",
+                "What is the name of a project that can be installed in any smart device?",
+                "Which project would you want to create on my smartphone?",
+                "What is the name of a project that can be installed on any Smart Devices?",
+                "What is the name of the project that can be installed in any smart device?"
             ],
-            "responses": "Scholarship/Contingency is awarded to meritorious girls taking admission in AICTE approved Technical institution at Degree/ Diploma. Total 10000 scholarship are given @ Rs 50000 as incidentals each year."
+            "responses": "Project Title :\r\n                        SOIC2021_001256\nDepartment :\r\n                        EC Department\nTeam Members :\r\n                        takwani yash jayeshkumar\r\n\r\n                    \nProject Details :\r\n                        Our project Manav Rakshak is basically an application that can be installed in any smart devices. This software will track the movement of each and every person. Then, if any patient is diagnose with covid-19, then we can track the past history of a person. People who were close to the person in past fifteen days will be given red zone which will be displayed on our application. So the person having red zone should make himself home quarantine and person who were not close to any of the covid-19 patient in last 15 days will be given green zone. Our        application works in both way that is if a normal person who is in green zone comes in contact with a person in red zone than our application will give continuous push notifications until a person is away enough from a person of red zone. This application will help to secure each and every person from getting infected by virus. This application only needs the user's location always remains on. This will be most important part that it does not affect the privacy of any person."
         },
         {
             "tag": "Data-9",
             "patterns": [
-                "Who is awarded the scholarship/Contingency?",
-                "Who is awarded the scholarship / contingent?",
-                "What is scholarship at the End of the term?",
-                "Who will be awarded a Scholarship or Contingent?",
-                "Who get Scholarships?",
-                "Which one is awarded a Scholarship/Contingency?",
-                "Who is selected in a scholarship?",
-                "Who is awarded a scholarship?",
-                "Who is awarded a Scholarship/Contingency?"
+                "What does NLP mean?",
+                "What is NLP?",
+                "What is the NLP?",
+                "What does NLP do? What are its uses?",
+                "What does NLP actually do?",
+                "What exactly NLP does?",
+                "What is the NLP, and how do you use it?"
             ],
-            "responses": "Scholarship/Contingency is awarded  to  Differently  abled students taking admission in AICTE approved Technical institution at Degree/ Diploma. Scholarship given @ Rs 50000 as incidentals each year."
-        },
-        {
-            "tag": "Data-10",
-            "patterns": [
-                "What is the purpose of scheme?",
-                "What is the purpose of scheme?",
-                "What's the aim of the Scheme?",
-                "What is the purpose of a scheme?",
-                "What's the purpose of a scheme?",
-                "What is the main purpose of the scheme?"
-            ],
-            "responses": "The objective of the scheme is to provide travel assistance registration fees to a team of minimum 2 to 10 students for attending competition at international level in order to encourage engineering students to improve their field of technical education."
-        },
-        {
-            "tag": "Data-11",
-            "patterns": [
-                "What is Scheme? Why is it created?",
-                "What is the purpose of Scheme?",
-                "What's the aim of the Scheme?",
-                "What is the purpose of a scheme?",
-                "What's the purpose of a Scheme?",
-                "What is the main purpose of the Scheme?",
-                "What is the purpose of scheme?"
-            ],
-            "responses": "Objective of the Scheme is to build up capacities in youth of J&K, educate, enable and empowering them to compete in normal course, enhancing and boosting employment potentials in students of J&K. Total 5000 scholarship are given @ Rs. 100000/- as Maintenance Charges and academic fee as Rs. 30000/- to General Degree, Rs. 125000/- to Engineering Degree & Rs. 300000/- to Medical Degree each year."
-        },
-        {
-            "tag": "Data-12",
-            "patterns": [
-                "What is the name of a scheme for engineering students to present papers abroad?",
-                "What's the name of the system for engineering students to present papers abroad?",
-                "Which is the name of the scheme for Engineering Students to present papers abroad?",
-                "What is the name of the scheme for engineering students to prepare papers abroad?",
-                "How can engineering students present papers abroad?"
-            ],
-            "responses": "An \u201cAICTE-INAE Travel Grant Scheme\u201d for Engineering Students to present papers abroad has been launched for enhancing the quality of engineering education in the country."
-        },
-        {
-            "tag": "Data-13",
-            "patterns": [
-                "What was the name of a conference held on 1st & 2nd April 2017?",
-                "What's the name of the event that was held on 1st & 2nd April 2017?",
-                "What was the name of an event that took place on 1st and 2nd April 2017?",
-                "Which event was held on 1st - 2nd April?",
-                "What is the name of event that has been held on 1st to 2nd April 2017?",
-                "What is the name of the event that was held on 1st to 2nd April 2017?",
-                "What is the name of the event that was held on 1st \u2013 2nd April 2017?"
-            ],
-            "responses": "A unique initiative to identify new and disruptive digital solutions for solving the challenges faced by our country under the program of Smart India Hackathon 2017. This event was held on 1st \u2013 2nd April 2017 for 36 hrs non-stop competition. 9544 technology students, 598 problems statements, 29 different central govt. ministries, 26 different Nodal centres & funding of Rs. 3 Lakh per team for 100 qualified teams."
-        },
-        {
-            "tag": "Data-14",
-            "patterns": [
-                "What is an innovation ecosystem? What do you think it would accomplish?",
-                "What is the objective of innovation ecosystem?",
-                "What is the main reason of the Innovation Ecosystem?",
-                "What's the aim of innovation ecosystem?",
-                "What is the purpose of innovation ecosystem?",
-                "What is the main aim of Innovation Ecosystem?",
-                "Who is the main aim of Innovation Ecosystem?",
-                "What is the aim of innovation ecosystem?"
-            ],
-            "responses": "The main objective of the scheme is to nurture an innovation ecosystem that benefits the technologically deficient MSMEs and technical institutes both. 408 Small and Medium Enterprises have given requirement of 738 Technology students."
+            "responses": "Project Title :\r\n                        SOIC2021_001296\nDepartment :\r\n                        EC Department\nTeam Members :\r\n                        vadi krutik jayntibhai\r\n\r\n                    \nProject Details :\r\n                        This Project comes up with the applications of NLP (Natural Language Processing) techniques for detecting the 'fake news', that is, misleading news stories that comes from the non-reputable sources. Only by building a model based on a count vectorizer (using word tallies) or a (Term Frequency Inverse Document Frequency) tfidf matrix, (word tallies relative to how often they\u2019re used in other articles in your dataset) can only get you so far. But these models do not consider the important qualities like word ordering and context. It is very possible that two articles that are similar in their word count will be completely different in their meaning. The data science community has responded by taking actions against the problem. There is a Kaggle competition called as the \u201cFake News Challenge\u201d and Facebook is employing AI to filter fake news stories out of users\u2019 feeds. Combatting the fake news is a classic text classification project with a straight forward proposition. Is it possible for you to build a model that can differentiate between \u201cReal \u201cnews and \u201cFake\u201d news? So a proposed work on assembling a dataset of both fake and real news and employ a Naive Bayes classifier in order to create a model to classify an article into fake or real based on its words and phrases."
         }
     ]
 }
